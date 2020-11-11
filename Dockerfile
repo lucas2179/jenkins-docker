@@ -18,8 +18,10 @@ RUN usermod -u $HOST_UID jenkins
 RUN groupmod -g $HOST_GID docker
 RUN usermod -aG docker jenkins
 
-USER jenkins
+
 
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+
+USER jenkins
