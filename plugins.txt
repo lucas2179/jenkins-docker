@@ -20,3 +20,4 @@ workflow-aggregator:latest
 ws-cleanup:latest
 docker-plugin:latest
 docker-workflow:latest
+nodejs:latest
