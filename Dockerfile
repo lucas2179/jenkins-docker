@@ -17,7 +17,9 @@ RUN npm -v
 RUN curl -L "https://github.com/docker/compose/releases/download/1.26.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose && \
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
-    
+RUN 	apt-get install -y python-pip
+RUN 	pip install --upgrade pip
+RUN 	pip install --upgrade zapcli
 RUN usermod -u $HOST_UID jenkins
 RUN groupmod -g $HOST_GID docker
 RUN usermod -aG docker jenkins
