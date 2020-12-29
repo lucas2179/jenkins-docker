@@ -10,6 +10,7 @@ RUN apt-get -y update && \
     add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable" && \
     apt-get update && \
     apt-get -y install docker-ce docker-ce-cli containerd.io
+RUN apt-get install jq
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
 RUN apt-get install --yes nodejs
 RUN node -v
